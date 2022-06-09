@@ -36,7 +36,7 @@ var storage = multer.diskStorage({
             let project = await projectModel.findOne({title});
             console.log(project);
             if(project===null){
-                await projectModel.insertMany({title , year , scope ,location ,client ,backgroundImage:`http://localhost:3000/${req.file.path}`
+                await projectModel.insertMany({title , year , scope ,location ,client ,backgroundImage:`https://kayann.herokuapp.com/${req.file.path}`
                 ,category_id })
                 project = await projectModel.findOne({title});
                 res.json({message:"projectCreated" , project})
