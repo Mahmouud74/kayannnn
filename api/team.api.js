@@ -52,7 +52,7 @@ var storage = multer.diskStorage({
           }
           else{
            // await teamModel.update({cvUrl:`http://localhost:3000/${req.file.path}`},{where:{teamMemberId}});
-            await teamModel.updateMany({_id:teamMemberId},{$set:{cvUrl:`http://localhost:3000/${req.file.path}`}});
+            await teamModel.updateMany({_id:teamMemberId},{$set:{cvUrl:`https://kayann.herokuapp.com/${req.file.path}`}});
 
             res.json({message:"cv Added Successfully"})
           }
@@ -76,7 +76,7 @@ var storage = multer.diskStorage({
                 //  let pathh= req.file.path.replace('uploads/','');
                 //let imageUrl="http://lmsapis.herokuapp.com/"+pathh;
                 await teamModel.insertMany({ teamMemberName , workPosition , job , linkedIn , faceBook ,
-                 imageUrl:`http://localhost:3000/${req.file.path}` });
+                 imageUrl:`https://kayann.herokuapp.com/${req.file.path}` });
                  let teaaam = await teamModel.findOne({teamMemberName});
                  res.json({message:"team Member added" , image : teaaam.imageUrl});
             }
