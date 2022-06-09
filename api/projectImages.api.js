@@ -52,7 +52,7 @@ var storage = multer.diskStorage({
       console.log(project);
       if(project){
         for (let i = 0; i < req.files.length; i++) {
-            await projectImagesModel.insertMany({project_id : projectId , image:`http://localhost:3000/${req.files[i].path}`})            
+            await projectImagesModel.insertMany({project_id : projectId , image:`https://kayann.herokuapp.com/${req.file.path}`})            
         }
         let projectImages = await projectImagesModel.find({project_id : project._id})
         res.json({message:"images Added Successfully" , projectImages})
