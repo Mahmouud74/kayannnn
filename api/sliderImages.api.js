@@ -30,7 +30,7 @@ var storage = multer.diskStorage({
             }
             else{
 
-                await sliderImagesModel.insertMany({sliderImageUrl:`http://localhost:3000/${req.file.path}`});
+                await sliderImagesModel.insertMany({sliderImageUrl:`https://kayann.herokuapp.com/${req.file.path}`});
                 res.json({message:'added succesfully'});
 
             }
